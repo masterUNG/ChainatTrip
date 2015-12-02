@@ -10,7 +10,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     //Explicit
     private ImageView hotelImageView, restaurantImageView, souvenirImageView, travelImageView;
-
+    private ManageTABLE objManageTABLE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,8 +20,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Bind Widget
         bindWidget();
 
+        //Connected Database
+        objManageTABLE = new ManageTABLE(this);
+
         //Image Controller
         imageController();
+
+
 
     }   // Main Method
 
