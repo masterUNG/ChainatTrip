@@ -26,9 +26,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //Image Controller
         imageController();
 
+        //Test Add Value
+        testAddValue();
+
 
 
     }   // Main Method
+
+    private void testAddValue() {
+
+        objManageTABLE.addValueToSQLite("Category",
+                "Title",
+                "ShortDetail",
+                "URLimage1",
+                "URLimage2",
+                "URLimage3",
+                "LongDetail",
+                "Lat",
+                "Lng");
+
+    }
 
     private void imageController() {
 
