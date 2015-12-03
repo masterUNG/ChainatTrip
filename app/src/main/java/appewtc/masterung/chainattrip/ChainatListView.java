@@ -9,5 +9,17 @@ public class ChainatListView extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chainat_list_view);
-    }
-}
+
+        //Create ListView
+        createListView();
+
+    }   // Main Method
+
+    private void createListView() {
+
+        //Read SQLite Form Where Hotel, Restaurant, ...
+
+
+    }   // createListView
+
+}   // Main Class

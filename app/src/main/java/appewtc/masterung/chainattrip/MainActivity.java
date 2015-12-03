@@ -161,6 +161,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
 
+        String strKeyword = "Hotel";
+        //Choose keyword
+        switch (view.getId()) {
+            case R.id.imageView:
+                strKeyword = "Hotel";
+                break;
+            case R.id.imageView2:
+                strKeyword = "Restaurant";
+                break;
+            case R.id.imageView3:
+                strKeyword = "Souvenir";
+                break;
+            case R.id.imageView4:
+                strKeyword = "Travel";
+                break;
+        }
+
 
         //Intent To ChainatListView
         Intent objIntent = new Intent(MainActivity.this, ChainatListView.class);
