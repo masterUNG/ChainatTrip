@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 public class DetailActivity extends AppCompatActivity {
 
     //Explicit
@@ -33,6 +35,21 @@ public class DetailActivity extends AppCompatActivity {
 
         titleTextView.setText(titleString);
         detailTextView.setText(detailString);
+
+        //First
+        Picasso.with(DetailActivity.this)
+                .load(firstString)
+                .into(firstImageView);
+
+        //Second
+        Picasso.with(DetailActivity.this)
+                .load(secondString)
+                .into(secondImageView);
+
+        //Third
+        Picasso.with(DetailActivity.this)
+                .load(thirdString)
+                .into(thirdImageView);
 
     }
 
