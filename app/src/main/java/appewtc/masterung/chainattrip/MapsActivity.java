@@ -60,7 +60,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         centerLatLng = new LatLng(latADouble, lngADouble);
 
-    }
+    }   //crateLatLng
 
     private void receiveValue() {
 
