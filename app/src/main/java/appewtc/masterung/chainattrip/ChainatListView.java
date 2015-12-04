@@ -1,9 +1,12 @@
 package appewtc.masterung.chainattrip;
 
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 public class ChainatListView extends AppCompatActivity {
@@ -30,7 +33,7 @@ public class ChainatListView extends AppCompatActivity {
 
         //Read All Data
         SQLiteDatabase objSqLiteDatabase = openOrCreateDatabase("Chainat.db", MODE_PRIVATE, null);
-        Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM chainatTABLE WHERE Category = " + "'" + strCategory + "'", null);
+        final Cursor objCursor = objSqLiteDatabase.rawQuery("SELECT * FROM chainatTABLE WHERE Category = " + "'" + strCategory + "'", null);
 
         objCursor.moveToFirst();
         int intCursor = objCursor.getCount();
@@ -63,6 +66,25 @@ public class ChainatListView extends AppCompatActivity {
         MyAdapter objMyAdapter = new MyAdapter(ChainatListView.this, titleStrings, shortDetailStrings, URLimege1Strings);
         ListView objListView = (ListView) findViewById(R.id.listView);
         objListView.setAdapter(objMyAdapter);
+
+        objListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                //Intent to DetailActivity
+                Intent objIntent = new Intent(ChainatListView.this, DetailActivity.class);
+                objIntent.putExtra("Title", titleStrings[i]);
+                objIntent.putExtra("Image1", URLimege1Strings[i]);
+                objIntent.putExtra("Image2", URLimage2Strings[i]);
+                objIntent.putExtra("Image3", URLimage3Strings[i]);
+                objIntent.putExtra("Detail", LongDetailStrings[i]);
+                objIntent.putExtra("Lat", LatStrings[i]);
+                objIntent.putExtra("Lng", LngStrings[i]);
+                startActivity(objIntent);
+
+            }   // event
+        });
+
 
     }   // createListView
 
