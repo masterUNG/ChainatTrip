@@ -6,5 +6,6 @@
     <string name="restaurant">ร้านอาหาร</string>
     <string name="souvenir">ร้านขายของที่ระลึก</string>
     <string name="travel">สถานที่ท่องเทียว</string>
+    <string name="title_activity_maps">Map</string>
 
 </resources>
