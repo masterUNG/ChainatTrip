@@ -49,6 +49,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
 
+
+
     }   // Main Method
 
     private void synchronizeJSONtoSQLite() {
@@ -178,9 +180,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
-
         //Intent To ChainatListView
         Intent objIntent = new Intent(MainActivity.this, ChainatListView.class);
+        objIntent.putExtra("Category", strKeyword);
         startActivity(objIntent);
 
     }   // onClick

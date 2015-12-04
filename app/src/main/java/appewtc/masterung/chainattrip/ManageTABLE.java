@@ -35,6 +35,7 @@ public class ManageTABLE {
 
     }   // Constructor
 
+
     //Add Value to chainatTABLE
     public long addValueToSQLite(String strCategory,
                                  String strTitle,
