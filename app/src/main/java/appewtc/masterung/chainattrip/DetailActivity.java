@@ -1,5 +1,6 @@
 package appewtc.masterung.chainattrip;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -37,6 +38,11 @@ public class DetailActivity extends AppCompatActivity {
     }
 
     public void clickMap(View view) {
+
+        Intent objIntent = new Intent(DetailActivity.this, MapsActivity.class);
+        objIntent.putExtra("Lat", latString);
+        objIntent.putExtra("Lng", lngString);
+        startActivity(objIntent);
 
     }
 
